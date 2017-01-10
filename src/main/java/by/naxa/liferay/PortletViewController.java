@@ -15,19 +15,28 @@
 package by.naxa.liferay;
 
 import com.liferay.portal.kernel.util.ReleaseInfo;
-
+import com.liferay.portal.kernel.util.WebKeys;
+import com.liferay.portal.model.User;
+import com.liferay.portal.theme.ThemeDisplay;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
+
+import javax.portlet.RenderRequest;
 
 @Controller
 @RequestMapping("VIEW")
 public class PortletViewController {
 
 	@RenderMapping
-	public String question(Model model) {
+	public String question(RenderRequest request, Model model) {
 		model.addAttribute("releaseInfo", ReleaseInfo.getReleaseInfo());
+
+		ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
+		User loggedUser = themeDisplay.getUser();
+
+		model.addAttribute("userName", loggedUser.getFullName());
 
 		return "portlet-demo/view";
 	}

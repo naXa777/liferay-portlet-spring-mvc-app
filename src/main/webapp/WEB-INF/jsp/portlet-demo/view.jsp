@@ -20,4 +20,7 @@
 
 This is the <b>Hello World</b> portlet.<br />
 
-Release info: <c:out escapeXml="true" value="${releaseInfo}" />.
+<jsp:useBean id="releaseInfo" scope="request" type="java.lang.String"/>
+Release info: <c:out escapeXml="true" value="${releaseInfo}" />;
+<jsp:useBean id="userName" scope="request" type="java.lang.String"/>
+Username: <c:out escapeXml="true" value="${userName}" />.
