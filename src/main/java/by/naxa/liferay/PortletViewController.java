@@ -14,10 +14,12 @@
 
 package by.naxa.liferay;
 
+import by.naxa.liferay.service.RecordService;
 import com.liferay.portal.kernel.util.ReleaseInfo;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.model.User;
 import com.liferay.portal.theme.ThemeDisplay;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +30,9 @@ import javax.portlet.RenderRequest;
 @Controller
 @RequestMapping("VIEW")
 public class PortletViewController {
+
+	@Autowired
+	private RecordService recordService;
 
 	@RenderMapping
 	public String question(RenderRequest request, Model model) {
