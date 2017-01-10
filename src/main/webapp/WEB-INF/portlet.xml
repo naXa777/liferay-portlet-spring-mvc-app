@@ -5,7 +5,7 @@
 			 version="2.0">
 	<portlet>
 		<portlet-name>portlet-demo</portlet-name>
-		<display-name>portlet-demo</display-name>
+		<display-name>Portlet Spring MVC Demo</display-name>
 		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
 		<init-param>
 			<name>contextConfigLocation</name>
@@ -20,9 +20,9 @@
 			<mime-type>text/html</mime-type>
 		</supports>
 		<portlet-info>
-			<title>portlet-demo</title>
-			<short-title>portlet-demo</short-title>
-			<keywords>portlet-demo</keywords>
+			<title>Portlet Spring MVC Demo</title>
+			<short-title>Portlet demo</short-title>
+			<keywords>portlet,demo,hello world,spring mvc,spring framework</keywords>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>

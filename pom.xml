@@ -6,8 +6,8 @@
 	<groupId>by.naxa.liferay</groupId>
 	<artifactId>portlet-demo</artifactId>
 	<packaging>war</packaging>
-	<name>portlet-demo Portlet</name>
-	<version>1.0-SNAPSHOT</version>
+	<name>Portlet Spring MVC Demo</name>
+	<version>1.0</version>
 	
 	<properties>
 		<plugin.type>portlet</plugin.type>
