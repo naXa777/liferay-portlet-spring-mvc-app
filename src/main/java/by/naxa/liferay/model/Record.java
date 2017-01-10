@@ -1,18 +1,23 @@
 package by.naxa.liferay.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 /**
- * Created by phomal on 1/10/2017.
+ * @author phomal
  */
 @Entity
 @Table(name = "record")
+@Getter
+@Setter
 public class Record {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private long recordId;
+    private Long recordId;
 
     @Column(name = "name")
     private String name;
