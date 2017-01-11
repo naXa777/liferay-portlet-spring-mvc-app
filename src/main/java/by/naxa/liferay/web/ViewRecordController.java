@@ -1,4 +1,4 @@
-package by.naxa.liferay;
+package by.naxa.liferay.web;
 
 import by.naxa.liferay.service.RecordService;
 import com.liferay.portal.kernel.util.ReleaseInfo;
@@ -14,10 +14,15 @@ import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
 import javax.portlet.RenderRequest;
 
+/**
+ * ViewRecordController renders the portlet; shows the records from the database in html table.
+ *
+ * @author phomal
+ */
 @Controller
 @RequestMapping("VIEW")
 @RequiredArgsConstructor(onConstructor = @__({@Autowired}))
-public class RecordViewController {
+public class ViewRecordController {
 
 	private final RecordService recordService;
 
