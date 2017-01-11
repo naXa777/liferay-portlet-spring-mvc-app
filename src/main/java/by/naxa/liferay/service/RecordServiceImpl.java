@@ -4,15 +4,31 @@ import by.naxa.liferay.dao.RecordsDAO;
 import by.naxa.liferay.model.Record;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author phomal
  */
 @Service(value="recordService")
+@Transactional
 public class RecordServiceImpl implements RecordService {
 
+    private final RecordsDAO recordsDAO;
+
     @Autowired
-    private RecordsDAO recordsDAO;
+    public RecordServiceImpl(RecordsDAO recordsDAO) {
+        this.recordsDAO = recordsDAO;
+
+        if (getRecords().spliterator().getExactSizeIfKnown() <= 0) {
+            Record rec = new Record();
+            rec.setName("Test Record 01");
+            this.addRecord(rec);
+
+            rec = new Record();
+            rec.setName("Test Record 02");
+            this.addRecord(rec);
+        }
+    }
 
     @Override
     public Iterable<Record> getRecords() {

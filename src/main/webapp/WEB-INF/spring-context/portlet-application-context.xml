@@ -47,6 +47,6 @@
 	</bean>
 
 	<tx:annotation-driven transaction-manager="txManager"/>
-	<jpa:repositories base-package="by.naxa.liferay.dao"/>
+	<jpa:repositories base-package="by.naxa.liferay.dao" transaction-manager-ref="txManager"/>
 
 </beans>
