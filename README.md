@@ -3,15 +3,18 @@
 A little project to play around with [Liferay Portal](https://www.liferay.com/), [Spring Framework](https://spring.io/), and [MySQL](https://www.mysql.com/).
 
 Using:
+* Java 8
 * Maven 3
 * Spring Framework 4.3.5
   * Spring Core
   * Spring Transactions
   * Spring Data JPA
+  * Spring Portlet MVC
 * Liferay 6.2
 * Portlet 2.0
 * MySQL 5
 * JPA 2.1 + Hibernate (as JPA provider)
+* JSP + JSTL + Spring Form taglib
 * Mixed XML Schema-based and annotation based Spring configuration
 
 ![Screenshot](http://i.imgur.com/Vp2YVEM.png)
