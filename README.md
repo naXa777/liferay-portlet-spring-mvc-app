@@ -50,7 +50,7 @@ jdbc.default.password=
 
 Deploy
 ------
-If you're using Liferay Portal with Tomcat, copy the war to the deploy directory and wait for Liferay to deploy it. After successful deploy you should be able to find the porlet under Sample category.
+If you're using Liferay Portal with Tomcat, copy the war to the deploy directory and wait for Liferay to deploy it. After successful deploy you should be able to find the portlet under Sample category.
 
 ```
 $ cp target/portlet-demo-1.0.war $LIFERAY_HOME/deploy/
