@@ -40,11 +40,13 @@ public class EditRecordController {
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
-        binder.setDisallowedFields("id");
+        // Mark fields as disallowed to avoid unwanted modifications by malicious users when binding HTTP
+        // request parameters.
+        binder.setDisallowedFields("recordId");
     }
 
     @ModelAttribute("record")
-    public Record getRecord(@RequestParam Long id) {
-        return recordService.getRecord(id);
+    public Record getRecord(@RequestParam Long recordId) {
+        return recordService.getRecord(recordId);
     }
 }

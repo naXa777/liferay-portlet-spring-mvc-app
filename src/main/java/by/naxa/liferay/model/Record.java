@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author phomal
@@ -12,7 +13,7 @@ import javax.persistence.*;
 @Table(name = "record")
 @Getter
 @Setter
-public class Record {
+public class Record implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

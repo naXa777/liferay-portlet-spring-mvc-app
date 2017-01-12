@@ -17,18 +17,12 @@
             <td><a href="${homeUrl}">Home</a></td>
         </tr>
     </table>
-    <table>
-        <tr>
-            <td>Name:</td>
-            <td><input type="text" name="name" value="${record.name}"/></td>
-        </tr>
-    </table>
+    <form:hidden path="recordId" />
+    <form:label path="name">Name:</form:label>
+    <form:input path="name" />
     <table align="center">
         <tr>
             <td><input type="submit" value="Update Record" /></td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
         </tr>
     </table>
 </form:form>

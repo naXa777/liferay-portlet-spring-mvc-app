@@ -37,6 +37,7 @@ public class RecordServiceImpl implements RecordService {
 
     @Override
     public void addRecord(Record record) {
+        record.setRecordId(null);
         recordsDAO.save(record);
     }
 

@@ -5,7 +5,6 @@ import by.naxa.liferay.service.RecordService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -14,7 +13,6 @@ import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import org.springframework.web.portlet.bind.annotation.RenderMapping;
 
 import javax.portlet.ActionResponse;
-import javax.portlet.RenderResponse;
 
 /**
  * {@code AddRecordController} shows the add record form and handles requests for adding a record to the database.
@@ -30,8 +28,7 @@ public class AddRecordController {
     private final RecordService recordService;
 
     @RenderMapping(params = "act=addRecordForm")
-    public String showAddRecordForm(RenderResponse response, Model model) {
-        model.addAttribute("record", new Record());
+    public String showAddRecordForm() {
         return "portlet-demo/addForm";
     }
 
@@ -46,4 +43,10 @@ public class AddRecordController {
         // invoked
         sessionStatus.setComplete();
     }
+
+    @ModelAttribute("record")
+    public Record populateRecord() {
+        return new Record();
+    }
+
 }

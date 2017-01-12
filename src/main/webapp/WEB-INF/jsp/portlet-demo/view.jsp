@@ -30,7 +30,7 @@ Username: <c:out escapeXml="true" value="${userName}" />.
                     <td align="center" valign="top" width="100px"><a href="
 						<portlet:renderURL>
 							<portlet:param name="act" value="editRecordForm" />
-							<portlet:param name="id" value="${record.recordId}" />
+							<portlet:param name="recordId" value="${record.recordId}" />
 						</portlet:renderURL>
 					"><b>Edit</b></a>
                         /
@@ -38,7 +38,8 @@ Username: <c:out escapeXml="true" value="${userName}" />.
 						<portlet:actionURL>
 							<portlet:param name="act" value="removeRecord" />
 							<portlet:param name="id" value="${record.recordId}" />
-						</portlet:actionURL>"><b>Remove</b></a></td>
+						</portlet:actionURL>" onclick="return confirmRemove()">
+                            <b>Remove</b></a></td>
                 </tr>
             </c:forEach>
         </table>
