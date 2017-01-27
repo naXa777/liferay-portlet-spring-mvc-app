@@ -11,6 +11,7 @@ Using:
   * Spring Data JPA
   * Spring Portlet MVC
 * Liferay 6.2
+* Project Lombok
 * Portlet 2.0
 * MySQL 5
 * JPA 2.1 + Hibernate (as JPA provider)
